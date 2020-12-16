@@ -51,7 +51,49 @@
                         <img class="profile" id="image4" src="../assets/Ellipse -4.png">
                     </label>
                 </div>
+            </div>
+
+            <!-- UC4 - Specify gender, department and salary with radio button, checkbox and range respectively -->
+            <div class="row-content">
+                <label class="label text" for="gender">Gender</label>
+                <div>
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label class="text" for="male">Male</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label class="text" for="female">Female</label>
+                </div>
+            </div>
+            <div class="row-content">
+                <label class="label text" for="department">Department</label>
+                <div>
+                    <input type="checkbox" id="hr" name="department" value="HR">
+                    <label class="text" for="hr">HR</label>
+                    <input type="checkbox" id="sales" name="department" value="Sales">
+                    <label class="text" for="sales">Sales</label>
+                    <input type="checkbox" id="finance" name="department" value="Finance">
+                    <label class="text" for="finance">Finance</label>
+                    <input type="checkbox" id="engineer" name="department" value="Engineer">
+                    <label class="text" for="engineer">Engineer</label>
+                    <input type="checkbox" id="others" name="department" value="Others">
+                    <label class="text" for="others">Others</label>
+                </div>
+            </div>
+            <div>
+                <label class="lebel text" for="salary">Choose your Salary</label>
+                <input class="input" type="range" name="salary" id="salary" min="30000" max="50000" step="100"
+                    value="40000">
+                <output class="text" for="salary">40000</output>
+                <div>
+                </div>
         </form>
+
+        <script>
+            const salary = document.querySelector('#salary');
+            const output = document.querySelector('.salary-output');
+            output.textContent = salary.value;
+            salary.addEventListener('input', function () {
+                output.textContent = salary.value;
+            });</script>
 </body>
 
 </html>
