@@ -64,3 +64,5 @@ this._startDate=startDate;
         return "id=" + this.id + "name=" + this.name + "gender=" +this.gender + ", ProfilePic=" +this.profilePic + ", department=" +this.department + ", salary=" +this.salary + ", startDate=" +empDate + ", note=" +this.note;
     }
 }
+
+module.exports = EmployeePayRoll;
