@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="../css/stylesheet.css" rel="stylesheet">
     <title>Employee Payroll Form</title>
+
 </head>
 
 <body>
@@ -22,8 +23,8 @@
     </header>
 
     <!-- UC2 - Employee Payroll Form with Header and Name -->
-    <div class="form-content">
-        <form class="form" action="#" onsubmit="save(); return false">
+    <div id="formId" class="form-content">
+        <form class="form" action="#" onsubmit="save()" onreset="resetForm()">
             <div class="form-head">Employee Payroll Form</div>
             <div class="row-content">
                 <label class="label text" for="name">Name</label>
@@ -161,25 +162,8 @@
                     <button type="reset" class="resetButton button">Reset</button>
                 </div>
             </div>
-            
-        </form>
-        <script>
-
-        const name = document.querySelector('#name');
-        const nameError = document.querySelector('.name-error');
-        name.addEventListener('input', function () {
-            let nameRegex = RegExp('^[A-Z]{1}[a-z]{2,}$');
-            if (nameRegex.test(name.value))
-                nameError.textContent = "";
-            else nameError.textContent = "Name is Incorrect";
-        });
-            const salary = document.querySelector('#salary');
-            const output = document.querySelector('.salary-output');
-            output.textContent = salary.value;
-            salary.addEventListener('input', function () {
-                output.textContent = salary.value;
-            });
-        </script>
+             </form> 
 </body>
-
+<script src="../js/EmployeePayroll.js"></script>
+        <script src="../js/EmployeePayrollNew.js"></script>
 </html>
