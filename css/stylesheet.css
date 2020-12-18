@@ -240,6 +240,13 @@ select {
   }
 }
 
+error-output {
+  font-weight: bold;
+  font-size: 12px;
+  font-style: italic;
+  color: red;
+}
+
 .inputcolor {
   width: 100%;
   background-color: #ccc;
@@ -249,3 +256,4 @@ select {
   resize: vertical;
   color: blue;
 }
+

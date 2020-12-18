@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/my_home.css">
-    <link href="https://fonts.googleapis.com?family=Monserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,500&display=swap" rel="stylesheet>">
+    <link
+        href="https://fonts.googleapis.com?family=Monserrat:ital,wght@0,100;0,200;0,300;0,400;0,600;0,500&display=swap"
+        rel="stylesheet>">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600&display=swap" rel="stylesheet">
     <title>Employee Payroll App</title>
     <script defer src="../js/new_home.js"></script>
 </head>
+
 <body>
 
     <!-- UC1 - Employee Payroll Form with Logo -->
@@ -21,13 +25,47 @@
             </div>
         </div>
     </header>
+    
     <!-- UC2 -  -->
     <div class="main-content">
         <div class="header-content">
             <div class="emp-detail-text">Employee Details<div class="emp-count">10</div>
             </div>
-            <a href="../pages/EmployeePayrollForm.html" class="add-button"><img src="../assets/add-24px.svg" alt="">Add User</a>
+            <a href="../pages/EmployeePayrollForm.html" class="add-button"><img src="../assets/add-24px.svg" alt="">Add
+                User</a>
         </div>
+        
+        <!-- UC3 -->
+        <div class="table-main">
+        <table id="table-display" class="table">
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Department</th>
+                <th>Salary</th>
+                <th>Start Date</th>
+                <th>Action</th>
+            </tr>
+            <tr>
+                <td><img class="profile" alt="" src="../assets/Ellipse -4.png">
+                </td>
+                <td>Samiksha Shende</td>
+                <td>Female</td>
+                <td>
+                    <div class='dept-label'>HR</div>
+                    <div class='dept-label'>Engineer</div>
+                <td>3000000</td>
+                <td>5th May 2017</td>
+                <td>
+                    <img id="1" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
+                    <img id="1" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg">
+                </td>
+                </td>
+            </tr>
+        </table>
+    </div>
     </div>
 </body>
+
 </html>
