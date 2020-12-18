@@ -1,5 +1,4 @@
-/** @format */
-/* UC1: Adding header and logo*/
+/* UC1 */
 body {
   margin: 0;
   height: 100%;
@@ -46,7 +45,7 @@ body {
   box-sizing: border-box;
 }
 
-/* UC2: form is added*/
+/* UC2 */
 .form-content {
   min-height: calc(100% - 80px);
   background-color: #f7f7f7;
@@ -107,7 +106,7 @@ label {
   resize: vertical;
 }
 
-/* UC3: profile radios*/
+/* UC3: */
 .profile-radio-content {
   display: flex;
   flex-direction: row;
@@ -200,46 +199,65 @@ select {
   color: #f5f5f5;
 }
 
+
 @media only screen and (max-width: 960px) {
-  .cancelButton {
-    margin-left: 0px;
-  }
   .form {
-    width: 85%;
-    padding: 44px 20px;
+      width: 85%;
+      padding: 44px 20px;
+      margin-top: 10px;
   }
+  body {
+      font-size: 12pt;
+      width: 110%;
+  }
+  .row-content {
+      display: block;
+      width: auto;
+      float: none;
+      column-width: auto;
+  }
+  ;
 }
 
-@media only screen and (max-width: 600px) {
-  .form {
-    margin-top: 10px;
-  }
+@media all and (min-device-width: 320px) and (max-device-width: 960px) {
   .row {
-    flex-direction: column;
+      flex-direction: column;
   }
   .uploadButton {
-    justify-content: flex-start;
+      justify-content: flex-start;
+      font-size: 3em;
   }
   .profile-radio-button {
-    flex-flow: wrap;
+      flex-flow: wrap;
   }
   .submit-reset {
-    width: 100%;
-    display: flex;
-    flex-grow: 1;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin-bottom: 20px;
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      margin: 5px;
+      min-width: 70px;
   }
   .submitButton {
-    margin: 0;
+      margin: 5px;
+      border-radius: 12px;
+      min-width: 70px;
   }
   .buttonParent {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+      align-items: flex-start;
+      margin: 5px;
+      border-radius: 12px;
+      min-width: 70px;
+  }
+  .cancelButton {
+      margin: 5px;
+      border-radius: 12px;
+      min-width: 70px;
+  }
+  .resetButton {
+      margin: 5px;
+      border-radius: 12px;
+      min-width: 70px;
   }
 }
-
 error-output {
   font-weight: bold;
   font-size: 12px;
