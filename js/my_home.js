@@ -1,4 +1,4 @@
-let empPayrollList;
+var empPayrollList;
 window.addEventListener('DOMContentLoaded', (event) => {
     empPayrollList = getEmployeePayrollDataFromStorage();
     document.querySelector(".emp-count").textContent = empPayrollList.length;
@@ -24,10 +24,10 @@ const createInnerHtml = () => {
     <td>${empPayrollData._gender}</td> 
     <td>${getDeptHtml(empPayrollData._department)}</td>
     <td>${empPayrollData._salary}</td>
-    <td>${stringifyDate(empPayrollData._startDate)}</td>
+    <td>${empPayrollData._startDate}</td>
     <td>
-        <img name="${empPayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
-        <img name="${empPayrollData._id}" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg">
+        <img id="${empPayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
+        <img id="${empPayrollData._id}" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg">
     </td>
     </tr>
     `;
@@ -38,7 +38,17 @@ const createInnerHtml = () => {
 const getDeptHtml = (deptList) => {
     let deptHtml = '';
     for (const dept of deptList) {
-        deptHtml = `${deptHtml} <dev class="dept-label dept-label-text">${dept}</div>`
+        deptHtml = `${deptHtml} <dev class="dept-label">${dept}</div>`
     }
     return deptHtml;
+}
+
+const remove = (node) => {
+    let empPayrollData = empPayrollList.find(empData => empData._id == node.id);
+    if (!empPayrollData) return;
+    const index = empPayrollList.map(empData => empData._id).indexOf(empPayrollData._id);
+    empPayrollList.splice(index, 1);
+    localStorage.setItem("EmployeePayrollList", JSON.stringify(empPayrollList));
+    document.querySelector(".emp-count").textContent = empPayrollList.length;
+    createInnerHtml();
 }

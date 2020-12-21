@@ -1,7 +1,5 @@
-// const EmployeePayRoll = require('./EmployeePayroll.js');
-// const EmployeePayrollForm = require('../pages/EmployeePayrollForm.html');
-
 // UC - 10 - On Document Load Set Event Listener
+
 window.addEventListener('DOMContentLoaded', (event) => {
     const name = document.querySelector('#name');
     const nameError = document.querySelector('.name-error');
@@ -40,6 +38,7 @@ const save = () => {
 }
 
 const createEmployeePayroll = () => {
+    let random = Math.floor(Math.random() * 100);
     let employeePayRoll = new EmployeePayRoll();
     try {
         employeePayRoll.name = getInputValueById('#name');
@@ -48,7 +47,7 @@ const createEmployeePayroll = () => {
         setTextValue('name-error', e);
         throw e;
     }
-
+    employeePayRoll.id = random;
     employeePayRoll.profilePic = getSelectedValues('[name=profile]').pop();
     employeePayRoll.gender = getSelectedValues('[name=gender]').pop();
     employeePayRoll.department = getSelectedValues('[name=department]').pop();
