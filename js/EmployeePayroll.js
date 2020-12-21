@@ -48,20 +48,20 @@ this._salary=salary;
         return this._note;
     }
     set note(note){
-this._note=note;
+    this._note=note;
     }
 
     get startDate(){
         return this._startDate;
     }
     set startDate(startDate){
-this._startDate=startDate;
+    this._startDate=startDate;
     }
 
     toString(){
         const options = {year : 'numeric', month : 'long', day : 'numeric'};
-        const empDate = this._startDate ? "undefined" : this._startDate.toLocaleDateString("en=US", options);
-        return "id=" + this._id + "name=" + this._name + "gender=" +this._gender + ", ProfilePic=" +this._profilePic + ", department=" +this._department + ", salary=" +this._salary + ", startDate=" +empDate + ", note=" +this._note;
+        const empDate = this.startDate ? "undefined" : this.startDate.toLocaleDateString("en=US", options);
+        return "id=" + this.id + ", name=" + this.name + ", gender=" +this.gender + ", ProfilePic=" +this.profilePic + ", department=" +this.department + ", salary=" +this.salary + ", startDate=" +this.startDate + ", note=" +this.note;
     }
 }
 
