@@ -11,7 +11,7 @@ return localStorage.getItem('EmployeePayrollList') ? JSON.parse(localStorage.get
 
 
 const createInnerHtml = () => {
-    const headerHtml = "<th></th><th>Name</th><th>Gender</th><th>Department</th>" + "<th>Salary</th><th>Start Date</th><th>Action</th>";
+    const headerHtml = `<th></th><th>Name</th><th>Gender</th><th>Department</th><th>Salary</th><th>Start Date</th><th>Action</th>`;
     if (empPayrollList.length == 0) return;
     let innerHtml = `${headerHtml}`;
     for (const empPayrollData of empPayrollList) {
@@ -23,7 +23,7 @@ const createInnerHtml = () => {
     <td>${empPayrollData._gender}</td> 
     <td>${getDeptHtml(empPayrollData._department)}</td>
     <td>${empPayrollData._salary}</td>
-    <td>${empPayrollData._startDate}</td>
+    <td>${stringifyDate(empPayrollData._startDate)}</td>
     <td>
         <img id="${empPayrollData._id}" onclick="remove(this)" alt="delete" src="../assets/delete-black-18dp.svg">
         <img id="${empPayrollData._id}" onclick="update(this)" alt="edit" src="../assets/create-black-18dp.svg">
